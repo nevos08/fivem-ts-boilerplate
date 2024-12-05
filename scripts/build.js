@@ -1,4 +1,4 @@
-import { createBuilder } from '@overextended/fx-utils'
+import { createBuilder, createFxmanifest } from '@overextended/fx-utils'
 
 const watch = process.argv.includes('--watch')
 

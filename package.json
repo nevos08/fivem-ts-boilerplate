@@ -1,0 +1,25 @@
+{
+  "name": "nvs_multicharacter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/build.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@citizenfx/client": "2.0.11873-1",
+    "@citizenfx/server": "2.0.11840-1",
+    "@overextended/fx-utils": "^0.0.4",
+    "@types/node": "^22.10.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  }
+}

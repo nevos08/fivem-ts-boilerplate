@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@client/*": ["../client/*"],
+      "@server/*": ["../server/*"],
+      "@shared/*": ["../shared/*"]
+    },
+    "types": ["@citizenfx/client", "@citizenfx/server", "@types/node"]
+  },
+  "include": ["./"]
+}

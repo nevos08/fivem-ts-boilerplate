@@ -1,4 +1,5 @@
 import { createBuilder, createFxmanifest } from '@overextended/fx-utils'
+import { getFiles } from './utils.js'
 
 const watch = process.argv.includes('--watch')
 
@@ -25,7 +26,7 @@ createBuilder(
       },
     },
   ],
-  async (files) => {
+  async (outfiles) => {
     const files = await getFiles('static')
     await createFxmanifest({
       client_scripts: [outfiles.client],

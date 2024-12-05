@@ -1,10 +1,9 @@
 import { createBuilder } from '@overextended/fx-utils'
-import { readdir } from 'fs/promises'
 
 const watch = process.argv.includes('--watch')
 
 createBuilder(
-  true,
+  watch,
   {
     dropLabels: !watch ? ['DEV'] : undefined,
   },
@@ -27,8 +26,37 @@ createBuilder(
     },
   ],
   async (files) => {
-    console.log('files', files)
-    const readFiles = await readdir('src/client')
-    console.log('readFiles', readFiles)
+    const files = await getFiles('dist/web', 'static')
+    await createFxmanifest({
+      client_scripts: [outfiles.client],
+      server_scripts: [outfiles.server],
+      files: [...files],
+      dependencies: ['/server:7290', '/onesync'],
+      metadata: {
+        ui_page: 'dist/web/index.html',
+      },
+    })
   },
 )
+
+async function getFiles(...args) {
+  const files = await Promise.all(
+    args.map(async (dir) => {
+      try {
+        const dirents = await readdir(`${dir}/`, { withFileTypes: true })
+        const paths = await Promise.all(
+          dirents.map(async (dirent) => {
+            const path = `${dir}/${dirent.name}`
+            return dirent.isDirectory() ? await getFiles(path) : path
+          }),
+        )
+
+        return paths.flat()
+      } catch (err) {
+        return []
+      }
+    }),
+  )
+
+  return files.flat()
+}

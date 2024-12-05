@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "dev": "node scripts/build.js --watch"
+    "dev": "node scripts/build.js --watch",
+    "web:dev": "cd web && vite dev"
   },
   "keywords": [],
   "author": "",
@@ -16,18 +17,16 @@
     "@citizenfx/server": "2.0.11840-1",
     "@overextended/fx-utils": "^0.0.4",
     "@types/node": "^22.10.1",
-    "@types/react": "^18.3.13",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-vue": "^5.2.1",
     "esbuild": "^0.24.0",
     "eslint": "^9.16.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.17.0",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vue-tsc": "^2.1.10"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "vue": "^3.5.13"
   }
 }

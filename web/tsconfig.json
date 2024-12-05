@@ -17,8 +17,9 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
 
     /* Linting */
     "strict": true,
@@ -26,6 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src", "./nui.d.ts"],
+  "include": ["./src", "./src/**/*.vue", "./nui.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

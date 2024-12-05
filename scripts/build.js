@@ -1,7 +1,8 @@
+import { exists, exec, getFiles } from './utils.js'
 import { createBuilder, createFxmanifest } from '@overextended/fx-utils'
-import { getFiles } from './utils.js'
 
 const watch = process.argv.includes('--watch')
+const web = await exists('./web')
 
 createBuilder(
   watch,
@@ -33,6 +34,11 @@ createBuilder(
       server_scripts: [outfiles.server],
       files: [...files],
       dependencies: ['/server:7290', '/onesync'],
+      metadata: {
+        ui_page: 'dist/web/index.html',
+      },
     })
   },
 )
+
+if (web) await exec(`cd ./web && vite build ${watch ? '--watch' : ''}`)

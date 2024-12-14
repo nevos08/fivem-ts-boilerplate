@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "dev": "node scripts/build.js --watch"
+    "build": "node scripts/build.js && cd web && pnpm build",
+    "dev": "node scripts/build.js --watch",
+    "web:dev": "cd web && pnpm dev"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,26 @@
+{
+  "name": "nvs_core",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@nativewrappers/client": "^1.7.33",
+    "@nativewrappers/fivem": "^0.0.90",
+    "@nativewrappers/server": "^0.0.90",
+    "@overextended/fx-utils": "^0.0.4",
+    "@overextended/ox_lib": "^3.30.5",
+    "@overextended/oxmysql": "^1.4.2"
+  },
+  "devDependencies": {
+    "@citizenfx/client": "^2.0.13866-1",
+    "@citizenfx/server": "^2.0.13866-1",
+    "@types/node": "^22.13.14",
+    "esbuild": "^0.25.1",
+    "typescript": "^5.8.2"
+  }
+}

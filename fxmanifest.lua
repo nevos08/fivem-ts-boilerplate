@@ -7,6 +7,7 @@ node_version '22'
 
 files {
 	'locales/*.json',
+	'common/*.json',
 }
 
 dependencies {

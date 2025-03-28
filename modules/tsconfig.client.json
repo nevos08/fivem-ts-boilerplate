@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "types": ["@citizenfx/client"],
     "composite": true,
     "paths": {
@@ -10,5 +9,5 @@
       "types": ["../types"]
     }
   },
-  "include": ["./", "../types", "../common/", "../locales/de.json", "../modules/**/client/**/*.ts"]
+  "include": []
 }

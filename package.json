@@ -2,12 +2,13 @@
   "name": "nvs_core",
   "version": "1.0.0",
   "scripts": {
-    "build": "node build.js",
-    "watch": "node build.js --watch"
+    "build": "node build/build.js",
+    "dev": "node build/build.js --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
+  "type": "module",
   "dependencies": {
     "@nativewrappers/client": "^1.7.33",
     "@nativewrappers/fivem": "^0.0.90",
